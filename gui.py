@@ -6,16 +6,11 @@ import sys
 import pyttsx3
 import speech_recognition as sr
 
-# Initialize the pyttsx3 engine
 engine = pyttsx3.init()
-
-# Initialize the event log
 event_log = []
-
-# Initialize speech recognition
 rcgnz = sr.Recognizer()
 
-# Redirect print statements to the GUI
+# Redirects print statements to tkinter GUI
 class RedirectText:
     def __init__(self, widget):
         self.widget = widget
@@ -25,7 +20,7 @@ class RedirectText:
         self.widget.yview(tk.END)
 
     def flush(self):
-        pass  # Required for compatibility with stdout
+        pass
 
 # Function to log any event with timestamp
 def log_event(event_type, details):
@@ -143,7 +138,7 @@ save_button.pack(pady=10)
 clear_log_button = tk.Button(root, text="Clear Log", font=("Helvetica", 16), command=clear_log, bg="#333333", fg="white", relief=tk.FLAT, width=20, height=2)
 clear_log_button.pack(pady=10)
 
-# Create a large Start button to activate voice recognition
+# Create a Start button to activate voice recognition
 start_button = tk.Button(root, text="Start", font=("Helvetica", 20), command=start_listening, bg="#4CAF50", fg="white", relief=tk.FLAT, width=20, height=3)
 start_button.pack(pady=20)
 
